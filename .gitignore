@@ -1,0 +1,40 @@
+# Secretos y configuración local (nunca se suben)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+spark-warehouse/
+metastore_db/
+*.db
+!datos/*.db
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Modelo entrenado (se regenera solo al arrancar) e historiador
+modelos/*.joblib
+historiador.db

@@ -1,0 +1,19 @@
+services:
+  gemelo:
+    build: .
+    container_name: gemelo-digital-planta
+    ports:
+      - "8000:8000"   # tablero web y API (http://localhost:8000, documentación en /docs)
+      - "5020:5020"   # Modbus TCP
+      - "4840:4840"   # OPC UA (opc.tcp://localhost:4840/gemelo/)
+    environment:
+      VELOCIDAD_SIM: "1"
+      MODBUS: "1"
+      OPCUA: "1"
+      HISTORIADOR: /datos/historiador.db
+    volumes:
+      - historiador:/datos
+    restart: unless-stopped
+
+volumes:
+  historiador:
